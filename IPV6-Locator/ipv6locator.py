@@ -144,6 +144,9 @@ def query_bssid(bssid):
     return process_result(apple_wloc)
 
 
+
+
+
 def bssidlocator(bssid_address):
     #print("Searching for location of bssid: %s" % bssid_address)
     results = query_bssid(bssid_address)
@@ -155,8 +158,6 @@ def bssidlocator(bssid_address):
                 print(results[bssid_address])
     else:
         print("The bssid was not found.")
-
-
 
 
 if __name__ == "__main__":
@@ -187,3 +188,17 @@ if __name__ == "__main__":
         except Exception as e:
             print(f"Error querying BSSID {bssid}: {e}")
     print("Alle Offsets getestet.")
+
+
+
+
+'''
+Implementation des 
+
+    darkosancanin
+    /
+    apple_bssid_locator
+
+Reverse Engineered
+'''
+
