@@ -1,0 +1,18 @@
+# Ignoriere alle __pycache__-Verzeichnisse und *.pyc-Dateien
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignoriere .crt-Dateien
+*.crt
+
+# Ignoriere virtuelle Umgebungen (optional, falls zutreffend)
+venv/
+.env/
+# Ignoriere Zertifikatsdateien
+*.crt
+*.pem
+
+# Ignoriere Konfigurationsdateien (falls verwendet)
+config.json
+.env
