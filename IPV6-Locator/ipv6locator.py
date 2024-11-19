@@ -150,14 +150,14 @@ def query_bssid(bssid):
 def bssidlocator(bssid_address):
     #print("Searching for location of bssid: %s" % bssid_address)
     results = query_bssid(bssid_address)
-    lat = "-180.0"
-    lon = "-180.0"
+    lat = -180.0
+    lon = -180.0
      
     if len(results) > 0:
-            if results[bssid_address] != (-180.0, -180.0):
+            if results[bssid_address] != (lat, lon):
                 print(results[bssid_address])
-    else:
-        print("The bssid was not found.")
+            else:
+                print("The bssid was not found.")
 
 
 if __name__ == "__main__":
@@ -172,7 +172,7 @@ if __name__ == "__main__":
 
     if len(wan_mac_address) > 2:
         # Use predefined offsets if the MAC address is valid
-        offsets = [-2, -1, 0, 1, 2, 3, 10, 16, -10, -16]
+        offsets = [-2, -1, 0, 1, 2, 3]
     else:
         print("Ungültige MAC-Adresse generiert. Keine Offsets verwendet.")
         sys.exit(1)
@@ -184,7 +184,8 @@ if __name__ == "__main__":
     for offset, bssid in bssid_list:
         #print(f"Berechnete BSSID mit Offset {offset}: {bssid}")
         try:
-            bssidlocator(bssid)  # Pass only the bssid string, not the tuple
+            print(f"Offset {offset}:")
+            l = bssidlocator(bssid) 
         except Exception as e:
             print(f"Error querying BSSID {bssid}: {e}")
     print("Alle Offsets getestet.")
